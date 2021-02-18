@@ -1,6 +1,8 @@
 # specnext-c-starter
 A starter project directory for using Z88DK in Linux (or WSL2).
 
+[Watch my YouTube video on this](https://youtu.be/HyRuLT6Io3I)
+
 # How to use
 
 ## Requirements
