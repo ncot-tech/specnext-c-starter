@@ -1,0 +1,71 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "CSpect",
+            "type": "shell",
+            "group": "test",
+            "command": "/mnt/f/zxnext/cspect/cspect.exe",
+            "args": [
+                "-sound",
+                "-w2",
+                "-60",
+                "-vsync",
+                "-zxnext",
+                "-mmc=./"
+            ],
+            "options": {
+                "cwd": "/mnt/f/zxnext/cspect"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "z88dk clean",
+            "type": "process",
+            "command": "make",
+            "args": ["clean"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "never",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "z88dk",
+            "type": "process",
+            "command": "make",
+            "args": ["install"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            },
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):\\s+(warning|error) \\d+:\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 0,
+                    "severity": 3,
+                    "message": 4
+                }
+            }
+        }
+    ]
+}

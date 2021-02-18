@@ -1,0 +1,45 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "launch": {
+
+        "configurations": [{
+            "type": "dezog",
+            "request": "launch",
+            "name": "DeZog",
+            "remoteType": "zxnext",
+            "zxnext": {
+                "port":12000,
+            },
+            "cspect": {
+                "port": 11000
+            },
+            "startAutomatically": false,
+            "history": {
+                "reverseDebugInstructionCount": 10000,
+                "codeCoverageEnabled": true
+            },
+            "commandsAfterLaunch": [
+                //"-sprites",
+                //"-patterns"
+            ],
+            "disassemblerArgs": {
+        		"numberOfLines": 20,
+                "esxdosRst": true
+            },
+            "rootFolder": "${workspaceFolder}",
+            "load": "bin/test.nex",
+            "smallValuesMaximum": 513,
+            "tmpDir": ".tmp"
+       }],
+        "compounds": []
+    },
+    "settings": {
+        "editor.fontFamily": "Source Code Pro for Powerline",
+        "C_Cpp.default.includePath": ["${default}", "/home/james/z88dk/include"]
+    }
+
+}
